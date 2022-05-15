@@ -164,7 +164,7 @@ const App = () => {
     if (isLoading || !locations || !locations.length) return null;
 
     return (
-        <div className={`h-screen bg-red-500`}>
+        <div className={`h-screen`}>
             <NavBar />
 
             <div className="container grid grid-cols-12 gap-4 mx-auto">

@@ -1,0 +1,335 @@
+@font-face {
+    font-family: 'GT Planar Medium';
+    src: url('../fonts/GTPlanar-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GT Planar Black';
+    src: url('../fonts/GTPlanar-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GT Planar Bold';
+    src: url('../fonts/GTPlanar-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GT Planar Thin';
+    src: url('../fonts/GTPlanar-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GT Planar Regular';
+    src: url('../fonts/GTPlanar-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GT Planar Light';
+    src: url('../fonts/GTPlanar-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GT Planar Italic 45 Black';
+    src: url('../fonts/GTPlanar-Italic45Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GT Planar Italic 15 Thin';
+    src: url('../fonts/GTPlanar-Italic15Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GT Planar Italic 45 Light';
+    src: url('../fonts/GTPlanar-Italic45Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GT Planar Italic 45 Bold';
+    src: url('../fonts/GTPlanar-Italic45Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GT Planar Italic 30 Medium';
+    src: url('../fonts/GTPlanar-Italic30Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GT Planar Italic 45 Regular';
+    src: url('../fonts/GTPlanar-Italic45Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GT Planar Italic 30 Black';
+    src: url('../fonts/GTPlanar-Italic30Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GT Planar Italic 45 Thin';
+    src: url('../fonts/GTPlanar-Italic45Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GT Planar Italic 30 Bold';
+    src: url('../fonts/GTPlanar-Italic30Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GT Planar Italic 30 Light';
+    src: url('../fonts/GTPlanar-Italic30Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GT Planar Italic 15 Light';
+    src: url('../fonts/GTPlanar-Italic15Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GT Planar Italic 15 Bold';
+    src: url('../fonts/GTPlanar-Italic15Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GT Planar Italic 15 Regular';
+    src: url('../fonts/GTPlanar-Italic15Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GT Planar Italic 30 Thin';
+    src: url('../fonts/GTPlanar-Italic30Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GT Planar Italic 15 Medium';
+    src: url('../fonts/GTPlanar-Italic15Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GT Planar Italic 30 Regular';
+    src: url('../fonts/GTPlanar-Italic30Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GT Planar Italic 15 Black';
+    src: url('../fonts/GTPlanar-Italic15Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GT Planar Italic 45 Medium';
+    src: url('../fonts/GTPlanar-Italic45Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GT Planar Retalic 15 Light';
+    src: url('../fonts/GTPlanar-Retalic15Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GT Planar Retalic 30 Medium';
+    src: url('../fonts/GTPlanar-Retalic30Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GT Planar Retalic 30 Bold';
+    src: url('../fonts/GTPlanar-Retalic30Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GT Planar Retalic 30 Black';
+    src: url('../fonts/GTPlanar-Retalic30Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GT Planar Retalic 15 Thin';
+    src: url('../fonts/GTPlanar-Retalic15Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GT Planar Retalic 15 Regular';
+    src: url('../fonts/GTPlanar-Retalic15Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GT Planar Retalic 15 Medium';
+    src: url('../fonts/GTPlanar-Retalic15Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GT Planar Retalic 45 Bold';
+    src: url('../fonts/GTPlanar-Retalic45Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GT Planar Retalic 30 Regular';
+    src: url('../fonts/GTPlanar-Retalic30Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GT Planar Retalic 45 Black';
+    src: url('../fonts/GTPlanar-Retalic45Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GT Planar Retalic 30 Thin';
+    src: url('../fonts/GTPlanar-Retalic30Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GT Planar Retalic 15 Black';
+    src: url('../fonts/GTPlanar-Retalic15Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GT Planar Retalic 45 Light';
+    src: url('../fonts/GTPlanar-Retalic45Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GT Planar Retalic 15 Bold';
+    src: url('../fonts/GTPlanar-Retalic15Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GT Planar Retalic 30 Light';
+    src: url('../fonts/GTPlanar-Retalic30Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GT Planar Retalic 45 Medium';
+    src: url('../fonts/GTPlanar-Retalic45Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GT Planar Retalic 45 Regular';
+    src: url('../fonts/GTPlanar-Retalic45Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GT Planar Retalic 45 Thin';
+    src: url('../fonts/GTPlanar-Retalic45Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+}

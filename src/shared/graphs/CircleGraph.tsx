@@ -6,7 +6,7 @@ interface CircleProps {
 }
 
 const Circle: FC<CircleProps> = ({ color, percentage }) => {
-    const radius = 75;
+    const radius = 47.5;
     const circle = 2 * Math.PI * radius;
     const strokePercentage = ((100 - percentage) * circle) / 100; // where stroke will start, e.g. from 15% to 100%.
     return (
@@ -49,7 +49,7 @@ interface CircleGraphProps {
 
 export const CircleGraph: FC<CircleGraphProps> = ({ color, percentage }) => {
     return (
-        <svg width={200} height={200}>
+        <svg width={95} height={95}>
             <g transform={`rotate(-90 ${'100 100'})`}>
                 <Circle color="lightgrey" percentage={100} />
                 <Circle color={color} percentage={percentage} />

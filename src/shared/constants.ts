@@ -1011,6 +1011,14 @@ export const FORECAST_TEMPERATURE_COLORS: TemperatureColor[] = [
     { value: -50, color: 'blue-600' }
 ];
 
+export const UV_INDEX: UVIndex[] = [
+    { value: 1, description: 'Low', color: '#3ea72d' },
+    { value: 4, description: 'Moderate', color: '#fff300' },
+    { value: 6.5, description: 'High', color: '#f18b00' },
+    { value: 9, description: 'Very high', color: '#e53210' },
+    { value: 11, description: 'Extreme', color: '#b567a4' }
+];
+
 export const getTemperateColor = (
     temperatureColors: object[],
     temperature: number

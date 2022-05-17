@@ -13,3 +13,5 @@ export const formatWindSpeed = (windSpeed: number): string =>
 
 export const formatRainProbability = (rainProbability: number): string =>
     `${rainProbability * 100}%`;
+
+export const formatPressure = (pressure: number): string => `${pressure} hPa`;

@@ -30,10 +30,12 @@ declare global {
             sunset: number;
         };
         isSelected: boolean;
+        forecastDays: ForecastDay[];
+        forecastHours: ForecastHour[];
     }
 
     interface GeoLocation {
-        countryCode: string;
+        country: string;
         name: string;
     }
 }

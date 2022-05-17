@@ -1,17 +1,21 @@
-import { FC } from 'react';
+import { FC, useContext } from 'react';
+import { AppContext } from 'context/AppContext';
 
 import ForecastDay from 'components/ForecastDay';
 import ForecastHour from 'components/ForecastHour';
 
-interface ForecastProps {
-    forecastDays: ForecastDay[];
-    forecastHours: ForecastHour[];
-}
+interface ForecastProps {}
 
-export const Forecast: FC<ForecastProps> = ({
-    forecastDays,
-    forecastHours
-}) => {
+export const Forecast: FC<ForecastProps> = () => {
+    const { locations } = useContext(AppContext);
+    if (!locations.length) return null;
+
+    const location = locations.find((location) => location.isSelected);
+    if (!location) return null;
+
+    const forecastDays = location.forecastDays;
+    const forecastHours = location.forecastHours;
+
     return (
         <div className="col-span-3 bg-white">
             <ul className="flex overflow-x-scroll">

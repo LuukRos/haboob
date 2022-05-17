@@ -1,15 +1,19 @@
-import { FC } from 'react';
+import { FC, useContext } from 'react';
+import { AppContext } from 'context/AppContext';
 
 import Pressure from 'components/Pressure';
 import Rain from 'components/Rain';
 import UVIndex from 'components/UVIndex';
 import Wind from 'components/Wind';
 
-interface LocationDetailsProps {
-    location: WeatherLocation | undefined;
-}
+interface LocationDetailsProps {}
 
-export const LocationDetails: FC<LocationDetailsProps> = ({ location }) => {
+export const LocationDetails: FC<LocationDetailsProps> = () => {
+    const { locations } = useContext(AppContext);
+    if (!locations.length) return null;
+
+    const location = locations.find((location) => location.isSelected);
+
     return (
         <main className="col-span-6">
             <div className="grid grid-cols-12">

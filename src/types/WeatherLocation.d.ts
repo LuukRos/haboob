@@ -4,6 +4,7 @@ declare global {
     interface WeatherLocation {
         name: string;
         date: Date;
+        time: string;
         countryCode: string;
         coords: {
             latitude: number;

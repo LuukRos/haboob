@@ -16,6 +16,7 @@ declare global {
 
     interface ForecastHour {
         date: Date;
+        time: string;
         temperature: {
             value: number;
         };

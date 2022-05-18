@@ -984,31 +984,31 @@ export const COUNTRIES = [
 ];
 
 export const TEMPERATURE_COLORS: TemperatureColor[] = [
-    { value: 50, color: 'bg-orange-600/10' },
-    { value: 40, color: 'bg-orange-500/10' },
-    { value: 30, color: 'bg-orange-400/10' },
-    { value: 20, color: 'bg-orange-300/10' },
-    { value: 10, color: 'bg-orange-100/10' },
-    { value: 0, color: 'bg-orange-50/10' },
-    { value: -10, color: 'bg-blue-100/10' },
-    { value: -20, color: 'bg-blue-300/10' },
-    { value: -30, color: 'bg-blue-400/10' },
-    { value: -40, color: 'bg-blue-500/10' },
-    { value: -50, color: 'bg-blue-600/10' }
+    { value: 50, className: 'bg-orange-600/10' },
+    { value: 40, className: 'bg-orange-500/10' },
+    { value: 30, className: 'bg-orange-400/10' },
+    { value: 20, className: 'bg-orange-300/10' },
+    { value: 10, className: 'bg-orange-100/10' },
+    { value: 0, className: 'bg-orange-50/10' },
+    { value: -10, className: 'bg-blue-100/10' },
+    { value: -20, className: 'bg-blue-300/10' },
+    { value: -30, className: 'bg-blue-400/10' },
+    { value: -40, className: 'bg-blue-500/10' },
+    { value: -50, className: 'bg-blue-600/10' }
 ];
 
 export const FORECAST_TEMPERATURE_COLORS: TemperatureColor[] = [
-    { value: 50, color: 'orange-600' },
-    { value: 40, color: 'orange-500' },
-    { value: 30, color: 'orange-400' },
-    { value: 20, color: 'orange-300' },
-    { value: 10, color: 'orange-100' },
-    { value: 0, color: 'orange-50' },
-    { value: -10, color: 'blue-100' },
-    { value: -20, color: 'blue-300' },
-    { value: -30, color: 'blue-400' },
-    { value: -40, color: 'blue-500' },
-    { value: -50, color: 'blue-600' }
+    { value: 50, className: 'orange-600' },
+    { value: 40, className: 'orange-500' },
+    { value: 30, className: 'orange-400' },
+    { value: 20, className: 'orange-300' },
+    { value: 10, className: 'orange-100' },
+    { value: 0, className: 'orange-50' },
+    { value: -10, className: 'blue-100' },
+    { value: -20, className: 'blue-300' },
+    { value: -30, className: 'blue-400' },
+    { value: -40, className: 'blue-500' },
+    { value: -50, className: 'blue-600' }
 ];
 
 export const UV_INDEX: UVIndex[] = [

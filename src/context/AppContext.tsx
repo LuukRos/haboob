@@ -28,8 +28,6 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
 
         // Then select any current location(s).
         const updatedLocations = locations.map((location) => {
-            console.log(location.isSelected);
-
             return { ...location, isSelected: false };
         });
 
@@ -56,8 +54,6 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
 
             return { ...location, isSelected: false };
         });
-
-        console.log(locationToSelect);
 
         // Then add the new location and make it the selected location.
         setLocations(updatedLocations);

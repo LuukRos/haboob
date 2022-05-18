@@ -14,7 +14,7 @@ export const UVIndex: FC<UVIndexProps> = ({ location }) => {
     );
 
     return (
-        <div className="grid grid-cols-12 p-8 bg-sky-100 rounded-2xl">
+        <div className="grid grid-cols-12 p-8 bg-sky-100 dark:bg-sky-900 rounded-2xl">
             <div className="col-span-6">
                 <h2 className="font-regular">UV Index</h2>
                 <p className="font-light">Today's UV index</p>
@@ -36,9 +36,9 @@ export const UVIndex: FC<UVIndexProps> = ({ location }) => {
                     }}
                 >
                     <div
-                        className="h-4 w-4 absolute top-1/2 transform-gpu -translate-y-1/2 rounded-2xl bg-white border-2 border-sky-100"
+                        className="h-4 w-4 absolute top-1/2 transform-gpu -translate-y-1/2 rounded-2xl bg-white border-2 border-sky-100 dark:border-sky-900"
                         style={{
-                            left: `${((uvIndex / 11) * 100).toFixed()}%`
+                            left: `${(uvIndex / 11) * 100}%`
                         }}
                     />
                 </div>

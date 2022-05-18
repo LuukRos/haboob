@@ -1,4 +1,5 @@
 import { FC, FormEvent, useContext, useEffect, useState } from 'react';
+
 import useFetch from 'hooks/useFetch';
 import { AppContext } from 'context/AppContext';
 
@@ -24,6 +25,7 @@ export const LocationSearch: FC<LocationSearchProps> = () => {
             )
                 .then(
                     ({
+                        timezone,
                         current: apiCurrent,
                         hourly: apiForecastHours,
                         daily: apiForecastDays
@@ -52,6 +54,13 @@ export const LocationSearch: FC<LocationSearchProps> = () => {
                             apiForecastHours.map(
                                 (apiForecastHour: any): ForecastHour => ({
                                     date: new Date(apiForecastHour.dt * 1000),
+                                    time: new Date(
+                                        apiForecastHour.dt * 1000
+                                    ).toLocaleTimeString('nl-NL', {
+                                        hour: '2-digit',
+                                        minute: '2-digit',
+                                        timeZone: timezone
+                                    }),
                                     temperature: {
                                         value: apiForecastHour.temp
                                     },
@@ -66,6 +75,13 @@ export const LocationSearch: FC<LocationSearchProps> = () => {
                         const location: WeatherLocation = {
                             name: foundLocation.name,
                             date: new Date(apiCurrent.dt * 1000),
+                            time: new Date(
+                                apiCurrent.dt * 1000
+                            ).toLocaleTimeString('nl-NL', {
+                                hour: '2-digit',
+                                minute: '2-digit',
+                                timeZone: timezone
+                            }),
                             countryCode: foundLocation.country,
                             coords: {
                                 latitude,

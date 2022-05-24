@@ -24,6 +24,7 @@ Obviously as for any perfectionist, this project contains things to be improved 
 -   Improved/generic fetch requests
 -   Improved visualisation of temperature charts on light/dark mode
 -   Improved visualisation of UV index
+-   Improved design (thinking about glassmorphism or neumorphism)
 -   Visualisation of pressure
 -   Improved HTML semantics
 -   Unit tests

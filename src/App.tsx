@@ -18,6 +18,10 @@ import './App.css';
 
 const App = () => {
     const context = useContext(AppContext);
+    const [locations, setLocations] = useState<WeatherLocation[]>(
+        // @ts-ignore
+        () => JSON.parse(localStorage.getItem('locations'))
+    );
     const [latitude, setLatitude] = useState<number>();
     const [longitude, setLongitude] = useState<number>();
 
@@ -39,24 +43,19 @@ const App = () => {
         console.error(error);
     };
 
-    const temperature = context.locations.find(
-        (location) => location.isSelected
-    )?.temperature.value;
-    let backgroundColor;
-    if (temperature) {
-        backgroundColor = TEMPERATURE_COLORS.reduce((result, current) =>
-            Math.abs(result.value - temperature) >
-            Math.abs(current.value - temperature)
-                ? current
-                : result
-        );
-    }
-
     useEffect(() => {
-        navigator.geolocation.getCurrentPosition(
-            onGeoLocationSuccess,
-            onGeoLocationError
-        );
+        if (!locations || !locations.length) {
+            // Get current position of user.
+            navigator.geolocation.getCurrentPosition(
+                onGeoLocationSuccess,
+                onGeoLocationError
+            );
+        } else {
+            // Restore locations from local storage.
+            locations.forEach((location) => {
+                context.addLocation(location);
+            });
+        }
     }, []);
 
     useEffect(() => {
@@ -145,7 +144,14 @@ const App = () => {
                             },
                             temperature: {
                                 value: apiCurrent.temp,
-                                perceived: apiCurrent.feels_like
+                                perceived: apiCurrent.feels_like,
+                                day: {
+                                    morning: apiForecastDays[0].feels_like.morn,
+                                    afternoon:
+                                        apiForecastDays[0].feels_like.day,
+                                    evening: apiForecastDays[0].feels_like.eve,
+                                    night: apiForecastDays[0].feels_like.night
+                                }
                             },
                             rain: {
                                 probability: apiForecastDays[0].pop
@@ -155,8 +161,8 @@ const App = () => {
                                 direction: apiCurrent.wind_deg
                             },
                             various: {
-                                humidity: apiCurrent.pressure,
-                                pressure: apiCurrent.humidity,
+                                humidity: apiCurrent.humidity,
+                                pressure: apiCurrent.pressure,
                                 uvIndex: apiCurrent.uvi
                             },
                             times: {
@@ -164,8 +170,13 @@ const App = () => {
                                 sunset: apiCurrent.sunset
                             },
                             isSelected: true,
+                            isCurrentLocation: true,
                             forecastDays: forecastDays,
-                            forecastHours: forecastHours
+                            forecastHours: forecastHours,
+                            weather: {
+                                type: apiCurrent.weather[0].main,
+                                icon: apiCurrent.weather[0].icon
+                            }
                         };
 
                         context.addLocation(location);
@@ -176,16 +187,14 @@ const App = () => {
     }, [latitude, longitude]);
 
     return (
-        <div className={`h-screen ${backgroundColor?.className}`}>
+        <div className="container mx-auto grid grid-cols-12 gap-4 p-4 md:p-0 md:py-4">
             <NavBar />
 
-            <div className="container grid grid-cols-12 gap-4 mx-auto">
-                <SideBar />
+            <SideBar />
 
-                <LocationDetails />
+            <LocationDetails />
 
-                <Forecast />
-            </div>
+            <Forecast />
         </div>
     );
 };

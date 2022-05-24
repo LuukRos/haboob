@@ -7,11 +7,17 @@ interface PressureProps {
 
 export const Pressure: FC<PressureProps> = ({ location }) => {
     return (
-        <div className="grid grid-cols-12 p-8 bg-sky-100 rounded-2xl">
+        <div className="grid grid-cols-12 rounded-lg bg-sky-100 p-6 dark:bg-sky-800">
             <div className="col-span-6">
-                <h2 className="font-regular">Pressure</h2>
-                <p className="font-light">Today's air pressure</p>
-                <p className="font-regular">
+                <h2 className="font-regular text-slate-600 dark:text-slate-300">
+                    Pressure
+                </h2>
+
+                <p className="font-light text-slate-600 dark:text-slate-300">
+                    Today's air pressure
+                </p>
+
+                <p className="font-regular text-slate-600 dark:text-slate-300">
                     {formatPressure(location.various.pressure)}
                 </p>
             </div>

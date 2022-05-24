@@ -10,7 +10,7 @@ export const SideBar: FC<SideBarProps> = () => {
     const { locations } = useContext(AppContext);
 
     return (
-        <aside className="col-span-3 p-4 bg-neutral-200">
+        <aside className="col-span-12 md:col-span-3">
             <LocationSearch />
 
             <ul>

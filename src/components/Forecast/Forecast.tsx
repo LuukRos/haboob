@@ -17,7 +17,7 @@ export const Forecast: FC<ForecastProps> = () => {
     const forecastHours = location.forecastHours;
 
     return (
-        <div className="col-span-3 bg-white">
+        <div className="col-span-12 md:col-span-3">
             <ul className="flex overflow-x-scroll">
                 {forecastHours &&
                     forecastHours.map((forecastHour, index) => (
@@ -29,7 +29,7 @@ export const Forecast: FC<ForecastProps> = () => {
                     ))}
             </ul>
 
-            <ul className="grid grid-cols-12">
+            <ul className="mt-4 grid grid-cols-12 rounded-lg bg-sky-100 px-4 dark:bg-sky-800">
                 {forecastDays &&
                     forecastDays.map((forecastDay, index) => (
                         <ForecastDay forecastDay={forecastDay} key={index} />

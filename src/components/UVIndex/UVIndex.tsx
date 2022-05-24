@@ -1,4 +1,5 @@
 import { FC } from 'react';
+
 import { UV_INDEX } from 'shared/constants';
 
 interface UVIndexProps {
@@ -14,16 +15,24 @@ export const UVIndex: FC<UVIndexProps> = ({ location }) => {
     );
 
     return (
-        <div className="grid grid-cols-12 p-8 bg-sky-100 dark:bg-sky-900 rounded-2xl">
+        <div className="grid grid-cols-12 rounded-lg bg-sky-100 p-6 dark:bg-sky-800">
             <div className="col-span-6">
-                <h2 className="font-regular">UV Index</h2>
-                <p className="font-light">Today's UV index</p>
-                <p className="font-regular">{uvIndex}</p>
+                <h2 className="font-regular text-slate-600 dark:text-slate-300">
+                    UV Index
+                </h2>
+
+                <p className="font-light text-slate-600 dark:text-slate-300">
+                    Today's UV index
+                </p>
+
+                <p className="font-regular text-slate-600 dark:text-slate-300">
+                    {uvIndex}
+                </p>
             </div>
 
             <div className="col-span-6 flex flex-col items-center justify-center">
                 <div
-                    className="h-4 w-full mb-2 p-[2px] relative rounded-2xl"
+                    className="relative mb-2 h-4 w-full rounded-lg p-[2px]"
                     style={{
                         background: `linear-gradient(
                                 90deg,
@@ -36,14 +45,20 @@ export const UVIndex: FC<UVIndexProps> = ({ location }) => {
                     }}
                 >
                     <div
-                        className="h-4 w-4 absolute top-1/2 transform-gpu -translate-y-1/2 rounded-2xl bg-white border-2 border-sky-100 dark:border-sky-900"
+                        className="absolute top-1/2 h-5 w-5 -translate-y-1/2 rounded-lg border-2 border-sky-100 bg-white transition-transform dark:border-sky-800 dark:bg-slate-300"
                         style={{
-                            left: `${(uvIndex / 11) * 100}%`
+                            left: `${
+                                (uvIndex / 11) * 100 >= 100
+                                    ? 100
+                                    : (uvIndex / 11) * 100
+                            }%`
                         }}
                     />
                 </div>
 
-                <p className="font-regular">{uvIndexObject.description}</p>
+                <p className="font-regular text-slate-600 dark:text-slate-300">
+                    {uvIndexObject.description}
+                </p>
             </div>
         </div>
     );

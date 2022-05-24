@@ -13,6 +13,12 @@ declare global {
         temperature: {
             value: number;
             perceived: number;
+            day: {
+                morning: number;
+                afternoon: number;
+                evening: number;
+                night: number;
+            };
         };
         rain: {
             probability: number;
@@ -30,9 +36,14 @@ declare global {
             sunrise: number;
             sunset: number;
         };
+        isCurrentLocation: boolean;
         isSelected: boolean;
         forecastDays: ForecastDay[];
         forecastHours: ForecastHour[];
+        weather: {
+            type: string;
+            icon: string;
+        };
     }
 
     interface GeoLocation {

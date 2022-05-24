@@ -4,6 +4,7 @@ import useFetch from 'hooks/useFetch';
 import { AppContext } from 'context/AppContext';
 
 import { API_ENDPOINT, API_GEO_ENDPOINT, API_KEY } from 'shared/constants';
+import Search from 'assets/icons/Search';
 
 interface LocationSearchProps {}
 
@@ -89,7 +90,14 @@ export const LocationSearch: FC<LocationSearchProps> = () => {
                             },
                             temperature: {
                                 value: apiCurrent.temp,
-                                perceived: apiCurrent.feels_like
+                                perceived: apiCurrent.feels_like,
+                                day: {
+                                    morning: apiForecastDays[0].feels_like.morn,
+                                    afternoon:
+                                        apiForecastDays[0].feels_like.day,
+                                    evening: apiForecastDays[0].feels_like.eve,
+                                    night: apiForecastDays[0].feels_like.night
+                                }
                             },
                             rain: {
                                 probability: apiForecastDays[0].pop
@@ -108,8 +116,13 @@ export const LocationSearch: FC<LocationSearchProps> = () => {
                                 sunset: apiCurrent.sunset
                             },
                             isSelected: true,
+                            isCurrentLocation: false,
                             forecastDays: forecastDays,
-                            forecastHours: forecastHours
+                            forecastHours: forecastHours,
+                            weather: {
+                                type: apiCurrent.weather[0].main,
+                                icon: apiCurrent.weather[0].icon
+                            }
                         };
 
                         context.addLocation(location);
@@ -117,7 +130,7 @@ export const LocationSearch: FC<LocationSearchProps> = () => {
                 )
                 .catch((error) => console.error(error));
         }
-    }, [latitude, longitude]);
+    }, [foundLocation, latitude, longitude]);
 
     const handleLocationSearchSubmit = (event: FormEvent) => {
         event.preventDefault();
@@ -126,7 +139,6 @@ export const LocationSearch: FC<LocationSearchProps> = () => {
             getGeo(`direct?q=${searchInput}&limit=1&appid=${API_KEY}`)
                 .then((response) => {
                     if (!response.length) {
-                        // TODO: finish this.
                         console.error('No results found');
                         return;
                     }
@@ -150,17 +162,20 @@ export const LocationSearch: FC<LocationSearchProps> = () => {
     };
 
     return (
-        <form className="relative" onSubmit={handleLocationSearchSubmit}>
+        <form className="relative mb-4" onSubmit={handleLocationSearchSubmit}>
             <input
                 type="text"
                 placeholder="Search for a city..."
-                className="w-full h-8 mb-4 px-4 py-8 rounded-lg"
+                className="h-8 w-full rounded-lg bg-sky-800 px-4 py-8 text-slate-300 placeholder:text-slate-300 dark:bg-sky-100 dark:text-slate-600 dark:placeholder:text-slate-600"
                 value={searchInput}
                 onChange={({ target: { value } }) => setSearchInput(value)}
             />
 
-            <button className="absolute right-0 top-0" type="submit">
-                Search
+            <button
+                className="absolute right-4 top-1/2 -translate-y-1/2 transform-gpu text-slate-300 dark:text-slate-600"
+                type="submit"
+            >
+                <Search />
             </button>
         </form>
     );

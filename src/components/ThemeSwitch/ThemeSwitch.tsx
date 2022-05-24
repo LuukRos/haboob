@@ -1,35 +1,15 @@
-import React, { FC, useEffect, useState } from 'react';
+import { FC, useContext } from 'react';
+import { AppContext } from 'context/AppContext';
 
-import Dark from '../../assets/icons/Dark';
-import Light from '../../assets/icons/Light';
+import Dark from 'assets/icons/Dark';
+import Light from 'assets/icons/Light';
 
 export const ThemeSwitch: FC = () => {
-    const [theme, setTheme] = useState<string>(
-        () => localStorage.getItem('theme') ?? 'light'
-    );
-
-    useEffect(() => {
-        localStorage.setItem('theme', theme);
-    }, [theme]);
-
-    const handleThemeSwitch = () => {
-        switch (theme) {
-            case 'light':
-                setTheme('dark');
-                document.documentElement.classList.add('dark');
-                break;
-            case 'dark':
-                setTheme('light');
-                document.documentElement.classList.remove('dark');
-                break;
-            default:
-                break;
-        }
-    };
+    const { handleThemeSwitch } = useContext(AppContext);
 
     return (
         <button
-            className="text-3xl bg-neutral-200 dark:bg-neutral-700 rounded-xl p-2 shadow-neumorph shadow-neutral-200 dark:shadow-neutral-600"
+            className="rounded-lg bg-sky-100 p-2 text-3xl dark:bg-sky-800"
             onClick={handleThemeSwitch}
         >
             <span className="hidden dark:inline">

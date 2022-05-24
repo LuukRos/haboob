@@ -1,6 +1,6 @@
 # Haboob 😎
 
-Haboob (an intense type of dust/sand storm) is a small weather application and serves as a small but quite possibly evergrowing (passion) project that shows weather specific information based on a user's current geolocation, as well as optionally added cities. This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and uses OpenWeatherMap's [OneCall](https://openweathermap.org/api/one-call-3) and [Geocoding](https://openweathermap.org/api/geocoding-api) APIs.
+Haboob (an intense type of dust/sand storm) is a small weather application and serves as a small but quite possibly evergrowing (passion) project that shows weather specific information based on a user's current geolocation, as well as optionally added cities. This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and uses OpenWeatherMap's [OneCall](https://openweathermap.org/api/one-call-3) and [Geocoding](https://openweathermap.org/api/geocoding-api) APIs. You will have to supply your own API key, which can be added in the `constants.ts` file found in `src/shared`.
 
 ## Stack 🥞
 

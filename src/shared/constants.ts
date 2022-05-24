@@ -1,7 +1,7 @@
 export const API_ENDPOINT = 'https://api.openweathermap.org/data/2.5/';
 export const API_GEO_ENDPOINT = 'https://api.openweathermap.org/geo/1.0/';
 export const API_IMAGE_ENDPOINT = 'https://openweathermap.org/img/wn/';
-export const API_KEY = 'a7e29dcde22c0550ab405ca25dd9ad40';
+export const API_KEY = 'API_KEY_HERE';
 
 export const OFFSET = 127397;
 export const COUNTRIES = [

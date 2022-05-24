@@ -19,8 +19,11 @@ interface IAppContext {
 export const AppContext = createContext<IAppContext>({} as IAppContext);
 
 export const AppProvider = ({ children }: { children: ReactNode }) => {
-    const [theme, setTheme] = useState<string>(
-        () => localStorage.getItem('theme') ?? 'dark'
+    const [theme, setTheme] = useState<string>(() =>
+        localStorage.getItem('theme') ??
+        window.matchMedia('(prefers-color-scheme: dark)').matches
+            ? 'dark'
+            : 'light'
     );
     const [settings, setSettings] = useState<Settings>({ units: 'metric' });
 
